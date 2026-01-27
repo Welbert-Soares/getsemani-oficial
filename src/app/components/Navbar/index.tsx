@@ -6,9 +6,9 @@ import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
 import { useTheme } from '@/app/context/ThemeContext'
 import { useNavigation } from '@/app/hooks/useNavigation'
 import { useClickOutside } from '@/app/hooks/useClickOutside'
-import { NavbarLogo } from './NavbarLogo'
-import { DesktopMenu } from './DesktopMenu'
-import { MobileMenu } from './MobileMenu'
+import { Logo } from '@/app/components/Navbar/Logo'
+import { DesktopMenu } from '@/app/components/Navbar/DesktopMenu'
+import { MobileMenu } from '@/app/components/Navbar/MobileMenu'
 
 const Navbar = () => {
   const { theme, toggleTheme } = useTheme()
@@ -31,7 +31,7 @@ const Navbar = () => {
     <nav className="fixed w-full bg-white dark:bg-gray-900 shadow-md dark:shadow-slate-800/40 z-50">
       <div className="container max-w-7xl mx-auto px-4">
         <div className="flex items-center justify-between h-16">
-          <NavbarLogo theme={theme} />
+          <Logo theme={theme} />
 
           {/* Desktop Menu */}
           <DesktopMenu

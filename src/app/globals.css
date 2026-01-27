@@ -3,6 +3,7 @@
 @theme {
   --color-primary: oklch(59.78% 0.06634 70.79);
   --color-secondary: #6b7280;
+  --color-primary-blue: #0f1e3f;
   --color-dark: #1f2937;
   --color-light: #f9fafb;
   --color-text: #000000;
