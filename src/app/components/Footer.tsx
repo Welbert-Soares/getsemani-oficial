@@ -36,7 +36,7 @@ export default function Footer() {
               <li>
                 <Link
                   href="/conheca-nos"
-                  className="hover:text-gray-300 transition-colors"
+                  className="hover:text-primary transition-colors"
                 >
                   Conheça-nos
                 </Link>
@@ -44,7 +44,7 @@ export default function Footer() {
               <li>
                 <Link
                   href="/celulas"
-                  className="hover:text-gray-300 transition-colors"
+                  className="hover:text-primary transition-colors"
                 >
                   Células
                 </Link>
@@ -52,7 +52,7 @@ export default function Footer() {
               <li>
                 <Link
                   href="/contribuicao"
-                  className="hover:text-gray-300 transition-colors"
+                  className="hover:text-primary transition-colors"
                 >
                   Contribuição
                 </Link>
@@ -60,7 +60,7 @@ export default function Footer() {
               <li>
                 <Link
                   href="/agenda"
-                  className="hover:text-gray-300 transition-colors"
+                  className="hover:text-primary transition-colors"
                 >
                   Agenda
                 </Link>
@@ -75,7 +75,7 @@ export default function Footer() {
               <li>
                 <Link
                   href="/pedidos-oracao"
-                  className="hover:text-gray-300 transition-colors"
+                  className="hover:text-primary transition-colors"
                 >
                   Pedidos de Oração
                 </Link>
@@ -83,7 +83,7 @@ export default function Footer() {
               <li>
                 <Link
                   href="/conteudos"
-                  className="hover:text-gray-300 transition-colors"
+                  className="hover:text-primary transition-colors"
                 >
                   Conteúdos
                 </Link>
@@ -98,7 +98,7 @@ export default function Footer() {
               <li>
                 <Link
                   href="/fale-conosco"
-                  className="hover:text-gray-300 transition-colors"
+                  className="hover:text-primary transition-colors"
                 >
                   Fale Conosco
                 </Link>
@@ -106,7 +106,7 @@ export default function Footer() {
               <li>
                 <Link
                   href="/trabalhe-conosco"
-                  className="hover:text-gray-300 transition-colors"
+                  className="hover:text-primary transition-colors"
                 >
                   Trabalhe Conosco
                 </Link>
@@ -114,7 +114,7 @@ export default function Footer() {
               <li>
                 <Link
                   href="/onde-estamos"
-                  className="hover:text-gray-300 transition-colors"
+                  className="hover:text-primary transition-colors"
                 >
                   Onde Estamos
                 </Link>
@@ -131,7 +131,7 @@ export default function Footer() {
                   href="https://instagram.com"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center gap-2 hover:text-gray-300 transition-colors"
+                  className="flex items-center gap-2 hover:text-primary transition-colors"
                 >
                   <FaInstagram className="h-5 w-5" />
                   <span>Instagram</span>
@@ -142,7 +142,7 @@ export default function Footer() {
                   href="https://youtube.com"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center gap-2 hover:text-gray-300 transition-colors"
+                  className="flex items-center gap-2 hover:text-primary transition-colors"
                 >
                   <FaYoutube className="h-5 w-5" />
                   <span>Youtube</span>
@@ -153,7 +153,7 @@ export default function Footer() {
                   href="https://x.com"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center gap-2 hover:text-gray-300 transition-colors"
+                  className="flex items-center gap-2 hover:text-primary transition-colors"
                 >
                   <FaXTwitter className="h-5 w-5" />
                   <span>X</span>
