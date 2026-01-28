@@ -77,7 +77,7 @@ const EmblaCarousel: React.FC<PropType> = (props) => {
           {slides.map((src, index) => (
             <div
               key={index}
-              className={`flex-[0_0_auto] w-64 h-36 cursor-pointer transition-all duration-300 ${
+              className={`flex-[0_0_auto] w-40 h-24 md:w-52 md:h-32 lg:w-64 lg:h-36 cursor-pointer transition-all duration-300 ${
                 index === selectedIndex
                   ? "opacity-100 -translate-y-2 shadow-lg"
                   : "opacity-60 hover:opacity-100 hover:-translate-y-2 hover:shadow-lg"
