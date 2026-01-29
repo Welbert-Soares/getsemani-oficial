@@ -1,12 +1,18 @@
-import React, { memo } from "react";
+import { memo } from "react";
 import { CarouselThumbnailsProps } from "@/app/types/carousel";
 import ThumbnailItem from "./ThumbnailItem";
 
 /**
  * Carousel thumbnails gallery component
  */
-const CarouselThumbnails: React.FC<CarouselThumbnailsProps> = memo(
-  ({ slides, selectedIndex, isMobile, onThumbClick, emblaRef }) => {
+const CarouselThumbnails = memo(
+  ({
+    slides,
+    selectedIndex,
+    isMobile,
+    onThumbClick,
+    emblaRef,
+  }: CarouselThumbnailsProps) => {
     return (
       <div
         className={`overflow-hidden py-6 bg-white dark:bg-gray-900 px-4 md:px-0 ${

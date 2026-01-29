@@ -1,4 +1,4 @@
-import React, { memo } from "react";
+import { memo } from "react";
 import Image from "next/image";
 
 type ThumbnailItemProps = {
@@ -11,8 +11,8 @@ type ThumbnailItemProps = {
 /**
  * Individual thumbnail item component
  */
-const ThumbnailItem: React.FC<ThumbnailItemProps> = memo(
-  ({ src, alt, isSelected, onClick }) => {
+const ThumbnailItem = memo(
+  ({ src, alt, isSelected, onClick }: ThumbnailItemProps) => {
     return (
       <div
         className={`flex-[0_0_auto] w-40 h-24 md:w-52 md:h-32 lg:w-64 lg:h-36 cursor-pointer transition-all duration-300 rounded-xl ${

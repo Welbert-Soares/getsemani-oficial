@@ -1,12 +1,12 @@
-import React, { memo } from "react";
+import { memo } from "react";
 import Image from "next/image";
 import { CarouselSlideProps } from "@/app/types/carousel";
 
 /**
  * Individual carousel slide component
  */
-const CarouselSlide: React.FC<CarouselSlideProps> = memo(
-  ({ src, alt, priority = false }) => {
+const CarouselSlide = memo(
+  ({ src, alt, priority = false }: CarouselSlideProps) => {
     return (
       <div className="flex-[0_0_100%] min-w-0">
         <div className="relative w-full h-[90vh]">

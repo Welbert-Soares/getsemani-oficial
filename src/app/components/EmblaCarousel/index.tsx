@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useEffect, useCallback, memo } from "react";
+import { useState, useEffect, useCallback, memo } from "react";
 import useEmblaCarousel from "embla-carousel-react";
 import Autoplay from "embla-carousel-autoplay";
 import { useIsMobile } from "@/app/hooks/useIsMobile";
@@ -17,8 +17,12 @@ import {
  * Main carousel component with autoplay and thumbnail navigation
  * Supports responsive behavior with different configurations for mobile and desktop
  */
-const EmblaCarousel: React.FC<CarouselProps> = memo(
-  ({ slides, options, autoplayDelay = DEFAULT_AUTOPLAY_DELAY }) => {
+const EmblaCarousel = memo(
+  ({
+    slides,
+    options,
+    autoplayDelay = DEFAULT_AUTOPLAY_DELAY,
+  }: CarouselProps) => {
     const [selectedIndex, setSelectedIndex] = useState(0);
     const isMobile = useIsMobile();
 
