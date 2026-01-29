@@ -3,10 +3,10 @@
  * Contains the paths to the carousel images
  */
 export const CAROUSEL_SLIDES = [
-  "/imagens/slides/teste3.jpg",
   "/imagens/slides/teste.jpg",
   "/imagens/slides/teste2.jpg",
   "/imagens/slides/teste4.jpg",
+  "/imagens/slides/teste3.webp",
   "/imagens/slides/event.jpg",
 ] as const;
 

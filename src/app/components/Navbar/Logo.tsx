@@ -8,7 +8,7 @@ type LogoProps = {
 
 export const Logo = ({
   theme,
-  size = "w-20 h-12",
+  size = "w-16 h-10 md:w-20 md:h-12",
   isScrolled = true,
 }: LogoProps) => {
   // Quando não está scrolled, sempre mostra o logo branco (modo dark)
