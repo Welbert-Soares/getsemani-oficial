@@ -20,7 +20,7 @@ const cards = [
 
 export default function ContributionSection() {
   return (
-    <section className="w-full py-12 md:py-16 my-8 bg-primary">
+    <section className="w-full py-12 md:py-16 bg-primary">
       <div className="max-w-7xl mx-auto px-4">
         <h2 className="text-black text-2xl md:text-4xl font-bold mb-2">
           Faça sua contribuição

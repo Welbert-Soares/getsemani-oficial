@@ -3,6 +3,7 @@ import WelcomeSection from "@/app/components/WelcomeSection";
 import TVGetSection from "@/app/components/TVGetSection";
 import UpcomingEventsSection from "@/app/components/Upcoming/UpcomingEventsSection";
 import ContributionSection from "@/app/components/Contribution/ContributionSection";
+import CellInviteSection from "@/app/components/CellInviteSection";
 import { CAROUSEL_SLIDES, CAROUSEL_OPTIONS } from "@/app/constants/carousel";
 
 export default function Home() {
@@ -13,6 +14,7 @@ export default function Home() {
       <TVGetSection />
       <UpcomingEventsSection />
       <ContributionSection />
+      <CellInviteSection />
     </div>
   );
 }
