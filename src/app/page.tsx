@@ -1,10 +1,12 @@
-import EmblaCarousel from "./components/EmblaCarousel";
-import { CAROUSEL_SLIDES, CAROUSEL_OPTIONS } from "./constants/carousel";
+import EmblaCarousel from "@/app/components/EmblaCarousel";
+import WelcomeSection from "@/app/components/WelcomeSection";
+import { CAROUSEL_SLIDES, CAROUSEL_OPTIONS } from "@/app/constants/carousel";
 
 export default function Home() {
   return (
     <div className="w-full">
       <EmblaCarousel slides={CAROUSEL_SLIDES} options={CAROUSEL_OPTIONS} />
+      <WelcomeSection />
     </div>
   );
 }
