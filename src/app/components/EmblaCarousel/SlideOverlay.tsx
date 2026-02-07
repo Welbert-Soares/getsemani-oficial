@@ -5,7 +5,7 @@ import { SlideOverlayProps } from "@/app/types/carousel";
 const SlideOverlay = memo(({ slide, isVisible }: SlideOverlayProps) => {
   return (
     <div className="absolute inset-0 z-10 pointer-events-none">
-      <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/30 to-transparent" />
+      <div className="absolute inset-0 bg-linear-to-r from-black/70 via-black/30 to-transparent" />
 
       <div className="relative h-full flex flex-col justify-center max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
         <div
