@@ -33,13 +33,17 @@ const Navbar = () => {
   useClickOutside(dropdownRef, closeDropdown);
 
   useEffect(() => {
-    if (!isHome) return; // só escuta scroll na home
+    if (!isHome) {
+      setIsScrolled(true);
+      return;
+    }
+    setIsScrolled(false);
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 50);
     };
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
-  }, [isHome]);
+  }, [isHome, pathname]);
 
   // Determina se o background deve ser exibido
   const showBackground = isScrolled || isMobileMenuOpen;
