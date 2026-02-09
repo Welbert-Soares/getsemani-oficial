@@ -71,7 +71,7 @@ export default function SplitSection({
               {buttonText && buttonHref && (
                 <Link
                   href={buttonHref}
-                  className="inline-block bg-[#1a365d] text-white font-bold px-8 py-3 rounded-xl text-base md:text-lg hover:bg-[#1a365d]/90 transition-colors uppercase"
+                  className="inline-block bg-primary-blue text-white font-bold px-8 py-3 rounded-xl text-base md:text-lg hover:bg-primary-blue/90 transition-colors uppercase"
                 >
                   {buttonText}
                 </Link>

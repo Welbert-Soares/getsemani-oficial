@@ -44,6 +44,19 @@ const about = () => {
         />
 
         <InfoCardsSection />
+
+        <SplitSection
+          title="AINDA NÃO FAZ PARTE DA CÉLULA?"
+          description="Sua colaboração é muito importante para o avanço do reino"
+          buttonText="Células"
+          buttonHref="#celulas"
+          imageSrc="/imagens/slides/teste4.png"
+          imageAlt="Grupo de célula em atividade"
+          imagePosition="right"
+          textColor="text-white"
+          descriptionColor="text-white/90"
+          backgroundColor="bg-primary"
+        />
       </div>
     </div>
   );
