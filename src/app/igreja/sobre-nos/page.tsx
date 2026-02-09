@@ -2,7 +2,7 @@ import SplitSection from "@/app/components/SplitSection";
 import { SloganSection } from "../_components/SloganSection";
 import { InfoCardsSection } from "../_components/InfoCardsSection";
 
-const about = () => {
+const About = () => {
   return (
     <div className="w-full">
       <div className="py-8" />
@@ -62,4 +62,4 @@ const about = () => {
   );
 };
 
-export default about;
+export default About;

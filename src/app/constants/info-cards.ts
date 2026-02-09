@@ -1,4 +1,3 @@
-// constants/info-cards.ts
 export interface ScheduleEvent {
   id: string;
   title: string;
