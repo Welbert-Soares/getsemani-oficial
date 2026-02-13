@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 
-interface SplitSectionProps {
+type SplitSectionProps = {
   eyebrow?: string;
   eyebrowColor?: string;
   title: string;
@@ -17,7 +17,7 @@ interface SplitSectionProps {
   backgroundColor?: string;
   textColor?: string;
   descriptionColor?: string;
-}
+};
 
 export default function SplitSection({
   eyebrow,

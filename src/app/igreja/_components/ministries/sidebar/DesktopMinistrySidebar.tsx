@@ -1,11 +1,11 @@
 import MinistrySidebarButton from "./MinistrySidebarButton";
-import type { Ministry } from "../MinistriesGrid";
+import type { Ministry } from "@/app/types/ministry";
 
-interface DesktopMinistrySidebarProps {
+type DesktopMinistrySidebarProps = {
   ministries: Ministry[];
   selectedId: number;
   onSelect: (ministry: Ministry) => void;
-}
+};
 
 export default function DesktopMinistrySidebar({
   ministries,

@@ -1,13 +1,4 @@
-export type MenuItem = {
-  label: string;
-  href?: string;
-  submenu?: SubMenuItem[];
-};
-
-export type SubMenuItem = {
-  label: string;
-  href: string;
-};
+import type { MenuItem } from "@/app/types/navigation";
 
 export const menuItems: MenuItem[] = [
   {

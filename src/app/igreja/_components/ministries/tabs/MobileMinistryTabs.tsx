@@ -1,11 +1,11 @@
 import MinistryTabButton from "./MinistryTabButton";
-import type { Ministry } from "../MinistriesGrid";
+import type { Ministry } from "@/app/types/ministry";
 
-interface MobileMinistryTabsProps {
+type MobileMinistryTabsProps = {
   ministries: Ministry[];
   selectedId: number;
   onSelect: (ministry: Ministry) => void;
-}
+};
 
 export default function MobileMinistryTabs({
   ministries,

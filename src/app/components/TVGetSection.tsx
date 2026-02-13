@@ -4,10 +4,14 @@ import { useState } from "react";
 import Link from "next/link";
 import { FiArrowUpRight } from "react-icons/fi";
 import { FaPlay } from "react-icons/fa";
-import { TV_GET_VIDEOS, type VideoData } from "@/app/constants/videos";
+import type { Video } from "@/app/types/video";
 
-export default function TVGetSection() {
-  const [mainVideo, ...secondaryVideos] = TV_GET_VIDEOS;
+type TVGetSectionProps = {
+  videos: Video[];
+};
+
+export default function TVGetSection({ videos }: TVGetSectionProps) {
+  const [mainVideo, ...secondaryVideos] = videos;
   const [playingVideoId, setPlayingVideoId] = useState<string | null>(null);
 
   const playVideo = (videoId: string) => {

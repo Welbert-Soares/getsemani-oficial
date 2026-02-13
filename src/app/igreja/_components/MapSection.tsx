@@ -1,10 +1,10 @@
 import { MAP_INFO } from "@/app/constants/address";
 
-interface MapSectionProps {
+type MapSectionProps = {
   title?: string;
   address?: string;
   embedUrl?: string;
-}
+};
 
 const MapSection = ({
   title = MAP_INFO.title,

@@ -5,8 +5,23 @@ import { FaInstagram, FaYoutube } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
 
 import { Logo } from "@/app/components/Navbar/Logo";
+import type { FooterData } from "@/app/types/footer";
 
-export default function Footer() {
+type FooterProps = FooterData;
+
+export default function Footer({
+  address,
+  phones,
+  sections,
+  socialMedia,
+  copyright,
+}: FooterProps) {
+  const socialIcons = {
+    instagram: FaInstagram,
+    youtube: FaYoutube,
+    twitter: FaXTwitter,
+  };
+
   return (
     <footer className="bg-primary-blue text-white">
       <div className="container max-w-7xl mx-auto px-4 py-12">
@@ -18,149 +33,69 @@ export default function Footer() {
             </Link>
             <div className="text-sm space-y-1">
               <p className="font-semibold">Endereço:</p>
-              <p>R. Cassiano Campolina, 360</p>
-              <p>Dona Clara, Belo Horizonte - MG</p>
+              <p>{address.street}</p>
+              <p>
+                {address.neighborhood}, {address.city}
+              </p>
             </div>
             <div className="text-sm space-y-1 mt-6">
               <p className="font-semibold">Telefones Úteis:</p>
-              <p>Colégio: (31) 2532-9899</p>
-              <p>Ass. Social: (31) 3448-9866</p>
-              <p>Secretaria: (31) 3448-9899/9844</p>
+              {phones.map((phone, idx) => (
+                <p key={idx}>
+                  {phone.label}: {phone.number}
+                </p>
+              ))}
             </div>
           </div>
 
-          {/* Igreja */}
-          <div>
-            <h3 className="font-semibold text-lg mb-4">Igreja</h3>
-            <ul className="space-y-2 text-sm">
-              <li>
-                <Link
-                  href="/conheca-nos"
-                  className="hover:text-primary transition-colors"
-                >
-                  Conheça-nos
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/celulas"
-                  className="hover:text-primary transition-colors"
-                >
-                  Células
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/contribuicao"
-                  className="hover:text-primary transition-colors"
-                >
-                  Contribuição
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/agenda"
-                  className="hover:text-primary transition-colors"
-                >
-                  Agenda
-                </Link>
-              </li>
-            </ul>
-          </div>
-
-          {/* Links Úteis */}
-          <div>
-            <h3 className="font-semibold text-lg mb-4">Links Úteis</h3>
-            <ul className="space-y-2 text-sm">
-              <li>
-                <Link
-                  href="/pedidos-oracao"
-                  className="hover:text-primary transition-colors"
-                >
-                  Pedidos de Oração
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/conteudos"
-                  className="hover:text-primary transition-colors"
-                >
-                  Conteúdos
-                </Link>
-              </li>
-            </ul>
-          </div>
-
-          {/* Informações */}
-          <div>
-            <h3 className="font-semibold text-lg mb-4">Informações</h3>
-            <ul className="space-y-2 text-sm">
-              <li>
-                <Link
-                  href="/fale-conosco"
-                  className="hover:text-primary transition-colors"
-                >
-                  Fale Conosco
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/trabalhe-conosco"
-                  className="hover:text-primary transition-colors"
-                >
-                  Trabalhe Conosco
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/onde-estamos"
-                  className="hover:text-primary transition-colors"
-                >
-                  Onde Estamos
-                </Link>
-              </li>
-            </ul>
-          </div>
+          {/* Seções de links */}
+          {sections.map((section, idx) => (
+            <div key={idx}>
+              <h3 className="font-semibold text-lg mb-4">{section.title}</h3>
+              <ul className="space-y-2 text-sm">
+                {section.links.map((link, linkIdx) => (
+                  <li key={linkIdx}>
+                    <Link
+                      href={link.href}
+                      className="hover:text-primary transition-colors"
+                    >
+                      {link.label}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
 
           {/* Redes Sociais */}
           <div>
             <h3 className="font-semibold text-lg mb-4">Redes Sociais</h3>
             <ul className="space-y-3 text-sm">
-              <li>
-                <a
-                  href="https://instagram.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center gap-2 hover:text-primary transition-colors"
-                >
-                  <FaInstagram className="h-5 w-5" />
-                  <span>Instagram</span>
-                </a>
-              </li>
-              <li>
-                <a
-                  href="https://youtube.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center gap-2 hover:text-primary transition-colors"
-                >
-                  <FaYoutube className="h-5 w-5" />
-                  <span>Youtube</span>
-                </a>
-              </li>
-              <li>
-                <a
-                  href="https://x.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center gap-2 hover:text-primary transition-colors"
-                >
-                  <FaXTwitter className="h-5 w-5" />
-                  <span>X</span>
-                </a>
-              </li>
+              {socialMedia.map((social, idx) => {
+                const Icon = socialIcons[social.platform];
+                return (
+                  <li key={idx}>
+                    <a
+                      href={social.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center gap-2 hover:text-primary transition-colors"
+                    >
+                      <Icon className="h-5 w-5" />
+                      <span>{social.label}</span>
+                    </a>
+                  </li>
+                );
+              })}
             </ul>
           </div>
+        </div>
+      </div>
+
+      {/* Copyright */}
+      <div className="border-t border-white/20">
+        <div className="container max-w-7xl mx-auto px-4 py-6">
+          <p className="text-sm text-center text-white/70">{copyright}</p>
         </div>
       </div>
     </footer>
