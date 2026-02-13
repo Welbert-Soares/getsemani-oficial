@@ -2,26 +2,17 @@
 
 import { useCallback, useEffect, useState } from "react";
 import useEmblaCarousel from "embla-carousel-react";
+import type { VolunteerSlide } from "@/app/types/volunteer";
 
-const CARDS = [
-  {
-    image: "/imagens/slides/congresso-setxa-noite-195 2.png",
-    title: "Lorem Ipsum is simply dummy",
-    text: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
-  },
-  {
-    image: "/imagens/slides/congresso-setxa-noite-195 2.png",
-    title: "Voluntariado transforma vidas",
-    text: "O voluntariado é essencial para o crescimento da igreja e o fortalecimento da comunidade. Junte-se a nós e faça a diferença!",
-  },
-  {
-    image: "/imagens/slides/congresso-setxa-noite-195 2.png",
-    title: "Seja parte do propósito",
-    text: "Descubra como servir pode impactar sua vida e a de outros. Oportunidades para todos os perfis e idades.",
-  },
-];
+type VolunteerCarouselProps = {
+  title: string;
+  slides: VolunteerSlide[];
+};
 
-export default function VolunteerCarousel() {
+export default function VolunteerCarousel({
+  title,
+  slides,
+}: VolunteerCarouselProps) {
   const [emblaRef, emblaApi] = useEmblaCarousel({
     loop: true,
     align: "start",
@@ -62,11 +53,10 @@ export default function VolunteerCarousel() {
     <section className="w-full max-w-6xl mx-auto px-4 py-12">
       {/* Header with title and navigation arrows */}
       <div className="flex justify-between items-center mb-8">
-        <h2 className="text-3xl md:text-4xl font-bold text-black dark:text-white">
-          A Importância do
-          <br />
-          Voluntariado na Igreja
-        </h2>
+        <h2
+          className="text-3xl md:text-4xl font-bold text-black dark:text-white"
+          dangerouslySetInnerHTML={{ __html: title.replace(/\n/g, "<br />") }}
+        />
 
         {/* Navigation Arrows */}
         <div className="flex gap-3">
@@ -114,7 +104,7 @@ export default function VolunteerCarousel() {
       {/* Carousel Container */}
       <div className="embla overflow-hidden rounded-2xl" ref={emblaRef}>
         <div className="embla__container flex">
-          {CARDS.map((card, index) => (
+          {slides.map((card, index) => (
             <div
               className="embla__slide flex-[0_0_100%] min-w-0 transition-opacity duration-500"
               key={index}
@@ -147,7 +137,7 @@ export default function VolunteerCarousel() {
 
       {/* Dots Navigation */}
       <div className="embla__dots flex justify-center gap-2 mt-6">
-        {CARDS.map((_, index) => (
+        {slides.map((_, index) => (
           <button
             key={index}
             className={`embla__dot w-3 h-3 rounded-full transition-all ${

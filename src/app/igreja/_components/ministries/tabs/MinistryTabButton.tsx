@@ -1,8 +1,8 @@
-interface MinistryTabButtonProps {
+type MinistryTabButtonProps = {
   name: string;
   isSelected: boolean;
   onClick: () => void;
-}
+};
 
 export default function MinistryTabButton({
   name,

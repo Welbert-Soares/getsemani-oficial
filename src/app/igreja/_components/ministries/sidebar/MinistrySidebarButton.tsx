@@ -1,8 +1,8 @@
-interface MinistrySidebarButtonProps {
+type MinistrySidebarButtonProps = {
   name: string;
   isSelected: boolean;
   onClick: () => void;
-}
+};
 
 export default function MinistrySidebarButton({
   name,

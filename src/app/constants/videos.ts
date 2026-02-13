@@ -1,13 +1,6 @@
-export interface VideoData {
-  id: string;
-  title: string;
-  author: string;
-  date: string;
-  description: string;
-  youtubeId: string;
-}
+import type { Video } from "@/app/types/video";
 
-export const TV_GET_VIDEOS: VideoData[] = [
+export const TV_GET_VIDEOS: Video[] = [
   {
     id: "1",
     title: "CAIXA D'ÁGUA",

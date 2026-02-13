@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
 import { ChevronDownIcon } from "@heroicons/react/24/outline";
-import type { MenuItem } from "@/app/constants/navigation";
+import type { MenuItem } from "@/app/types/navigation";
 
 type DropdownMenuProps = {
   item: MenuItem;

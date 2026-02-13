@@ -10,6 +10,7 @@ import { useClickOutside } from "@/app/hooks/useClickOutside";
 import { Logo } from "@/app/components/Navbar/Logo";
 import { DesktopMenu } from "@/app/components/Navbar/DesktopMenu";
 import { MobileMenu } from "@/app/components/Navbar/MobileMenu";
+import { menuItems } from "@/app/constants/navigation";
 
 const Navbar = () => {
   const pathname = usePathname();
@@ -62,6 +63,7 @@ const Navbar = () => {
 
           {/* Desktop Menu */}
           <DesktopMenu
+            menuItems={menuItems}
             ref={dropdownRef}
             theme={theme}
             isScrolled={showBackground}
@@ -93,6 +95,7 @@ const Navbar = () => {
 
         {/* Mobile Menu */}
         <MobileMenu
+          menuItems={menuItems}
           isOpen={isMobileMenuOpen}
           theme={theme}
           openSubmenu={openMobileSubmenu}

@@ -4,18 +4,11 @@ import { useState } from "react";
 import MobileMinistryTabs from "./tabs/MobileMinistryTabs";
 import DesktopMinistrySidebar from "./sidebar/DesktopMinistrySidebar";
 import MinistryCard from "./card/MinistryCard";
+import type { Ministry } from "@/app/types/ministry";
 
-export interface Ministry {
-  id: number;
-  name: string;
-  title: string;
-  description: string;
-  image: string;
-}
-
-interface MinistriesGridProps {
+type MinistriesGridProps = {
   ministries: Ministry[];
-}
+};
 
 export default function MinistriesGrid({ ministries }: MinistriesGridProps) {
   const [selectedMinistry, setSelectedMinistry] = useState<Ministry>(

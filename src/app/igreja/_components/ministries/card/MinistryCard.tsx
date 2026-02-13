@@ -1,9 +1,9 @@
-import type { Ministry } from "../MinistriesGrid";
+import type { Ministry } from "@/app/types/ministry";
 
-interface MinistryCardProps {
+type MinistryCardProps = {
   ministry: Ministry;
   isAnimating: boolean;
-}
+};
 
 export default function MinistryCard({
   ministry,

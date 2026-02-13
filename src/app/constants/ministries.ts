@@ -1,10 +1,4 @@
-export interface Ministry {
-  id: number;
-  name: string;
-  title: string;
-  description: string;
-  image: string;
-}
+import type { Ministry } from "@/app/types/ministry";
 
 export const MINISTRIES_DATA: Ministry[] = [
   {

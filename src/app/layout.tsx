@@ -5,6 +5,7 @@ import "./globals.css";
 import { ThemeProvider } from "./context/ThemeContext";
 import { Navbar } from "./components/Navbar";
 import Footer from "./components/Footer";
+import { FOOTER_DATA } from "./constants/footer";
 
 export const metadata: Metadata = {
   title: "Getsemani",
@@ -24,7 +25,7 @@ export default function RootLayout({
         <ThemeProvider>
           <Navbar />
           <main>{children}</main>
-          <Footer />
+          <Footer {...FOOTER_DATA} />
         </ThemeProvider>
       </body>
     </html>
