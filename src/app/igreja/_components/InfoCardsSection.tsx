@@ -2,9 +2,27 @@
 import Image from "next/image";
 import Link from "next/link";
 import { FaPhoneAlt } from "react-icons/fa";
-import { SCHEDULE_EVENTS, SEDE_INFO } from "@/app/constants/info-cards";
+import type { InfoCardLink } from "@/app/types/info-cards";
+import type { SedeInfo } from "@/app/types/address";
+import type { ScheduleEvent } from "@/app/types/event";
 
-const InfoCardsSection = () => {
+type InfoCardsSectionProps = {
+  mainImage: string;
+  sedeInfo: SedeInfo;
+  scheduleEvents: ScheduleEvent[];
+  findUs: InfoCardLink;
+  agenda: InfoCardLink;
+  churchImage: string;
+};
+
+const InfoCardsSection = ({
+  mainImage,
+  sedeInfo,
+  scheduleEvents,
+  findUs,
+  agenda,
+  churchImage,
+}: InfoCardsSectionProps) => {
   return (
     <section className="w-full py-16 md:py-24 bg-white dark:bg-gray-900">
       <div className="max-w-7xl mx-auto px-4 md:px-8">
@@ -12,7 +30,7 @@ const InfoCardsSection = () => {
           {/* Card 1 - Imagem */}
           <div className="rounded-3xl overflow-hidden">
             <Image
-              src="/imagens/slides/teste2.jpg"
+              src={mainImage}
               alt="Comunidade Getsamani"
               width={400}
               height={320}
@@ -24,24 +42,22 @@ const InfoCardsSection = () => {
           <div className="bg-primary-blue text-white rounded-3xl p-6 md:p-8 flex flex-col justify-between min-h-[180px]">
             <div>
               <h3 className="text-3xl md:text-4xl font-bold mb-2">SEDE</h3>
-              <p className="text-sm mb-4 opacity-90">
-                Igreja Batista Getsamani - Dona Clara
-              </p>
+              <p className="text-sm mb-4 opacity-90">{sedeInfo.name}</p>
               <address className="not-italic text-sm leading-relaxed opacity-90">
-                {SEDE_INFO.address.street}
+                {sedeInfo.address.street}
                 <br />
-                {SEDE_INFO.address.neighborhood}
+                {sedeInfo.address.neighborhood}
                 <br />
-                {SEDE_INFO.address.city}
+                {sedeInfo.address.city}
               </address>
             </div>
             <div className="flex items-center gap-2 text-sm mt-4">
               <FaPhoneAlt className="w-4 h-4" />
               <a
-                href={`tel:${SEDE_INFO.phone.replace(/\D/g, "")}`}
+                href={`tel:${sedeInfo.phone.replace(/\D/g, "")}`}
                 className="hover:underline"
               >
-                {SEDE_INFO.phone}
+                {sedeInfo.phone}
               </a>
             </div>
           </div>
@@ -52,7 +68,7 @@ const InfoCardsSection = () => {
               Programação Semanal
             </h3>
             <div className="space-y-3">
-              {SCHEDULE_EVENTS.map((event) => (
+              {scheduleEvents.map((event) => (
                 <div
                   key={event.id}
                   className={`rounded-2xl p-3 md:p-4 ${
@@ -83,18 +99,17 @@ const InfoCardsSection = () => {
           <div className="bg-[#d4d8dd] rounded-3xl p-6 md:p-8 flex flex-col justify-between min-h-[180px]">
             <div>
               <h3 className="text-2xl md:text-3xl font-bold mb-3 md:mb-4 text-black">
-                Encontre-nos
+                {findUs.text}
               </h3>
               <p className="text-sm text-gray-700 leading-relaxed">
-                standard dummy text ever since the 1500s, when an unknown
-                printer took a galley of type and scrambled it to make
+                {findUs.description}
               </p>
             </div>
             <Link
-              href="#"
+              href={findUs.buttonLink}
               className="bg-primary-blue text-white font-bold px-6 py-3 rounded-xl text-sm uppercase hover:bg-primary-blue/90 transition-colors w-fit mt-4"
             >
-              SAIBA MAIS
+              {findUs.buttonText}
             </Link>
           </div>
 
@@ -102,18 +117,17 @@ const InfoCardsSection = () => {
           <div className="bg-primary rounded-3xl p-6 md:p-8 flex flex-col justify-between min-h-[180px]">
             <div>
               <h3 className="text-2xl md:text-3xl font-bold mb-3 md:mb-4 text-white">
-                Agenda
+                {agenda.text}
               </h3>
               <p className="text-sm text-white/90 leading-relaxed">
-                standard dummy text ever since the 1500s, when an unknown
-                printer took a galley of type and scrambled it to make
+                {agenda.description}
               </p>
             </div>
             <Link
-              href="#"
+              href={agenda.buttonLink}
               className="bg-[#d4d8dd] text-primary-blue font-bold px-6 py-3 rounded-xl text-sm uppercase hover:bg-white/90 transition-colors w-fit mt-4"
             >
-              SAIBA MAIS
+              {agenda.buttonText}
             </Link>
           </div>
         </div>

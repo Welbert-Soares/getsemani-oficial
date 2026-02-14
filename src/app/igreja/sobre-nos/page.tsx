@@ -3,6 +3,10 @@ import { SloganSection } from "../_components/SloganSection";
 import { InfoCardsSection } from "../_components/InfoCardsSection";
 import { ProgrammingBarSection } from "../_components/ProgrammingBarSection";
 
+import { SLOGAN_SECTION_DATA } from "@/app/constants/slogan-section";
+import { INFO_CARDS_SECTION_DATA } from "@/app/constants/info-cards-section";
+import { PROGRAMMING_BAR_DATA } from "@/app/constants/programming-bar";
+
 const About = () => {
   return (
     <div className="w-full">
@@ -19,8 +23,8 @@ const About = () => {
         descriptionColor="text-gray-600 dark:text-gray-400"
       />
 
-      <ProgrammingBarSection />
-      <SloganSection />
+      <ProgrammingBarSection {...PROGRAMMING_BAR_DATA} />
+      <SloganSection {...SLOGAN_SECTION_DATA} />
 
       <div className="grid ">
         <SplitSection
@@ -45,7 +49,7 @@ const About = () => {
           descriptionColor="text-white/90"
         />
 
-        <InfoCardsSection />
+        <InfoCardsSection {...INFO_CARDS_SECTION_DATA} />
 
         <SplitSection
           title="AINDA NÃO FAZ PARTE DA CÉLULA?"
