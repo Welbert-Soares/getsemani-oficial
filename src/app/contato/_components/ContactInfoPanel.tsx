@@ -23,7 +23,7 @@ export default function ContactInfoPanel({
   schedule,
 }: ContactInfoPanelProps) {
   return (
-    <div className="relative flex flex-col justify-between h-full min-h-[520px] rounded-2xl overflow-hidden p-8 md:p-10">
+    <div className="relative flex flex-col justify-evenly h-full min-h-[520px] rounded-2xl overflow-hidden p-8 md:p-10">
       <Image
         src={backgroundImage}
         alt="Igreja Getsêmani"
@@ -35,7 +35,7 @@ export default function ContactInfoPanel({
 
       {/* Title */}
       <div className="relative z-10">
-        <h2 className="text-white font-bold text-2xl md:text-3xl leading-snug max-w-xs">
+        <h2 className="text-white font-bold text-2xl md:text-4xl leading-snug max-w-xs">
           {title}
         </h2>
       </div>
