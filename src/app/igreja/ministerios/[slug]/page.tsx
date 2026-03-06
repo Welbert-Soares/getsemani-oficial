@@ -2,6 +2,22 @@ import { notFound } from "next/navigation";
 import MinistryHero from "@/app/igreja/_components/ministries/MinistryHero";
 import ArticleSection from "@/app/igreja/_components/ministries/ArticleSection";
 import { MINISTRIES_DATA } from "@/app/constants/ministries";
+import ContentBrowser, {
+  type ContentBrowserItem,
+  type ContentBrowserCategory,
+  type ContentBrowserSocialLink,
+} from "@/app/components/ContentBrowser";
+
+import { SOCIAL_SECTION_DATA } from "@/app/constants/social-section";
+
+const ministryItems: ContentBrowserItem[] = MINISTRIES_DATA.map((m) => ({
+  id: m.id,
+  image: m.image,
+  title: m.title,
+  description: m.description,
+  href: `/igreja/ministerios/${m.slug}`,
+  category: m.name,
+}));
 
 type MinistryPageProps = {
   params: Promise<{
@@ -33,6 +49,18 @@ export async function generateMetadata({ params }: MinistryPageProps) {
   };
 }
 
+const ministryCategories: ContentBrowserCategory[] = MINISTRIES_DATA.map(
+  (m) => ({ id: m.name, label: m.name }),
+);
+
+const ministrySocialLinks: ContentBrowserSocialLink[] =
+  SOCIAL_SECTION_DATA.socialLinks
+    .filter(
+      (l): l is typeof l & { platform: "instagram" | "facebook" | "youtube" } =>
+        ["instagram", "facebook", "youtube"].includes(l.platform),
+    )
+    .map((l) => ({ platform: l.platform, url: l.url }));
+
 export default async function MinistryPage({ params }: MinistryPageProps) {
   const { slug } = await params;
   const ministry = MINISTRIES_DATA.find((m) => m.slug === slug);
@@ -55,6 +83,12 @@ export default async function MinistryPage({ params }: MinistryPageProps) {
       {ministry.articles.length > 0 && (
         <ArticleSection articles={ministry.articles} />
       )}
+
+      <ContentBrowser
+        items={ministryItems}
+        categories={ministryCategories}
+        socialLinks={ministrySocialLinks}
+      />
     </div>
   );
 }
