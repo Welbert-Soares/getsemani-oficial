@@ -33,6 +33,18 @@ export interface DonationBanner {
   buttonHref: string;
 }
 
+export interface OfferHeroSection {
+  title: string;
+  imageSrc: string;
+  imageAlt: string;
+  buttonText: string;
+  buttonHref: string;
+}
+
+export interface OffersPageData {
+  heroSection: OfferHeroSection;
+}
+
 export interface MinistriesPageData {
   headerSection: HeaderSection;
   volunteerSection: VolunteerSection;
