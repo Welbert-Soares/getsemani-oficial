@@ -26,4 +26,11 @@ export const MINISTRIES_PAGE_DATA: MinistriesPageData = {
     descriptionColor: "text-white/90",
     backgroundColor: "bg-primary",
   },
+  donationBanner: {
+    title: "CONTRIBUA COM AMOR",
+    description:
+      "Sua contribuição sustenta o trabalho dos ministérios e transforma vidas. Faça parte dessa história.",
+    buttonText: "CONTRIBUIR AGORA",
+    buttonHref: "#",
+  },
 };
