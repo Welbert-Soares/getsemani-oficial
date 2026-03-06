@@ -26,9 +26,17 @@ export interface VolunteerSection {
   backgroundColor: string;
 }
 
+export interface DonationBanner {
+  title: string;
+  description: string;
+  buttonText: string;
+  buttonHref: string;
+}
+
 export interface MinistriesPageData {
   headerSection: HeaderSection;
   volunteerSection: VolunteerSection;
+  donationBanner: DonationBanner;
 }
 
 export interface CellSection {

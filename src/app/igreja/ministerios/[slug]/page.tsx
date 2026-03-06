@@ -1,7 +1,9 @@
 import { notFound } from "next/navigation";
 import MinistryHero from "@/app/igreja/_components/ministries/MinistryHero";
 import ArticleSection from "@/app/igreja/_components/ministries/ArticleSection";
+import DonationBanner from "@/app/igreja/_components/ministries/DonationBanner";
 import { MINISTRIES_DATA } from "@/app/constants/ministries";
+import { MINISTRIES_PAGE_DATA } from "@/app/constants/ministries-page";
 import ContentBrowser, {
   type ContentBrowserItem,
   type ContentBrowserCategory,
@@ -89,6 +91,8 @@ export default async function MinistryPage({ params }: MinistryPageProps) {
         categories={ministryCategories}
         socialLinks={ministrySocialLinks}
       />
+
+      <DonationBanner {...MINISTRIES_PAGE_DATA.donationBanner} />
     </div>
   );
 }
