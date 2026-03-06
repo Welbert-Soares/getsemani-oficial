@@ -41,8 +41,40 @@ export interface OfferHeroSection {
   buttonHref: string;
 }
 
+export type ContributionMethodIcon =
+  | "app"
+  | "pix"
+  | "bank"
+  | "church"
+  | "qrcode";
+
+export interface ContributionMethod {
+  icon: ContributionMethodIcon;
+  title: string;
+  description: string;
+}
+
+export interface OfferContributionSection {
+  title: string;
+  methods: ContributionMethod[];
+  qrCode: {
+    title: string;
+    imageSrc?: string;
+  };
+}
+
 export interface OffersPageData {
   heroSection: OfferHeroSection;
+  contributionSection: OfferContributionSection;
+  impactBanner: OfferImpactBanner;
+}
+
+export interface OfferImpactBanner {
+  description: string;
+  stat: string;
+  statLabel: string;
+  imageSrc: string;
+  imageAlt: string;
 }
 
 export interface MinistriesPageData {
