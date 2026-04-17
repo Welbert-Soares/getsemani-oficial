@@ -10,7 +10,7 @@ export const menuItems: MenuItem[] = [
       { label: "Missões", href: "/igreja/missoes" },
     ],
   },
-  { label: "Agenda", href: "/#agenda" },
+  { label: "Agenda", href: "/agenda" },
   {
     label: "Informações",
     submenu: [
